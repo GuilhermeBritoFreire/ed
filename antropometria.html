@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <!-- Meta tags Obrigatórias -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <title>BodyHealthy</title>
+  <script>
+    /*
+    Função que verifica se o imc é ideal,sobrepeso ou obeso
+    e guarda e, cookie o resultado
+*/
+
+    function imc_para_criancas(genero, imc, idade) {
+      if (genero == true) {
+        if (imc < menino_ideal[idade - 6]) {   //aqui verifica se o imc é ideal
+          alert("Criança com imc abaixo do recomendado.");
+          guardar_cookie("Criança com imc abaixo do recomendado.");
+          return true;
+        }
+        if (imc >= menino_ideal[idade - 6] && imc < menina_ideal[idade - 6]) {   //aqui verifica se o imc é ideal
+          alert("Criança com imc ideal.");
+          guardar_cookie("Criança com imc ideal")
+          return true;
+        }
+        if (imc >= menino_sobrepeso[idade - 6] && imc < menino_obeso[idade - 6]) { //aqui verifica se o imc é sobrepeso
+          alert("Criança com imc sobrepeso.");
+          guardar_cookie("Criança com imc sobrepeso")
+          return true;
+        }
+        if (imc >= menino_obeso[idade - 6]) { //aqui verifica se o imc é obeso
+          alert("Criança com imc obeso.");
+          guardar_cookie("Criança com imc obeso")
+          return true;
+        }
+      }
+      else {
+        if (imc < menina_ideal[idade - 6] && imc < menina_ideal[idade - 6]) {   //aqui verifica se o imc é ideal
+          alert("Criança com imc abaixo do recomendado.");
+          guardar_cookie("Criança com imc abaixo do recomendado.");
+          return true;
+        }
+        if (imc >= menina_ideal[idade - 6]) {   //aqui verifica se o imc é ideal
+          alert("Criança com imc ideal.");
+          guardar_cookie("Criança com imc ideal")
+          return true;
+        }
+        if (imc >= menina_sobrepeso[idade - 6] && imc < menino_obeso[idade - 6]) { //aqui verifica se o imc é sobrepeso
+          alert("Criança com imc sobrepeso.");
+          guardar_cookie("Criança com imc sobrepeso")
+          return true;
+        }
+        if (imc >= menina_obeso[idade - 6]) { //aqui verifica se o imc é obeso
+          alert("Criança com imc obeso.");
+          guardar_cookie("Criança com imc obeso")
+          return true;
+        }
+      }
+    }
+
+    function guardar_cookie(valor) {
+      // SAMUEL ARRUMA ISSO AQUI
+    }
+
+    //tabela dos boys
+    var menino_ideal = [14.5, 15, 15.6, 16.1, 16.7, 17.2, 17.8, 18.5, 19.2, 19.9];
+    var menino_sobrepeso = [16.6, 17.3, 16.7, 18.8, 19.6, 20.3, 21.1, 21.9, 22.7, 23.6];
+    var menino_obeso = [18.0, 19.1, 20.3, 21.4, 22.5, 23.7, 24.8, 25.9, 26.9, 27.7];
+
+    //tabela das garotas     :D
+    var menina_ideal = [14.3, 14.9, 15.6, 16.3, 17, 17.6, 18.3, 18.9, 19.3, 19.6];
+    var menina_sobrepeso = [16.1, 17.1, 18.1, 19.1, 20.1, 21.1, 23, 23.8, 24.2];
+    var menina_obeso = [17.4, 18.9, 20.3, 21.7, 23.2, 24.5, 25.9, 27.7, 27.9, 28.8];
+
+
+    // Função para calcular o IMC
+    function calcularIMC() {
+      // Converter altura para metros
+      var altura = parseFloat(document.getElementById("altura").value)
+      var peso = parseFloat(document.getElementById("peso").value)
+
+      // Calcular o IMC
+      var imc = peso / (altura * altura);
+
+
+
+      var genero = document.getElementById("genero_menino").checked;
+      var idade = parseInt(document.getElementById("idade").value);
+
+      if (idade < 16) {
+        imc_para_criancas(genero, imc, idade);
+      }
+      if (idade >= 16 && idade < 65) {
+        alert(classificarIMC(imc));
+
+      }
+      else {
+        if (idade >= 65) {
+          alert(idoso(genero, imc));
+        }
+      }
+      calcularRCE(altura, genero)
+      RCQ(idade, genero)
+    }
+    // Função para calcular o IMC
+    function idoso(genero, imc) {
+      if (genero) {
+        if (imc < 21.9) {
+          guardar_cookie("seu IMC é " + imc + " | Baixo Peso");
+          return "seu IMC é " + imc + " | Baixo Peso";
+        } else if (imc >= 21.9 && imc < 27.0) {
+          guardar_cookie("seu IMC é " + imc + " | Adequado");
+          return "seu IMC é " + imc + " | Adequado";
+        } else if (imc >= 27.0 && imc < 30.0) {
+          guardar_cookie("seu IMC é " + imc + " | Sobrepeso");
+          return "seu IMC é " + imc + "| Sobrepeso";
+        } else if (imc >= 30.0 && imc < 35.0) {
+          guardar_cookie("seu IMC é " + imc + " | Obessidade 1");
+          return "seu IMC é " + imc + " | Obesidade Classe 1";
+        } else if (imc >= 35.0 && imc < 40.0) {
+          guardar_cookie("seu IMC é " + imc + " | Obessidade 2");
+          return "seu IMC é " + imc + " | Obesidade Classe 2";
+        } else {
+          guardar_cookie("seu IMC é " + imc + " | Obessidade 3");
+          return "seu IMC é " + imc + " | Obesidade Classe 3";
+        }
+      }
+      else {
+        if (imc < 21.9) {
+          guardar_cookie("seu IMC é " + imc + " | Baixo Peso");
+          return "seu IMC é " + imc + " | Baixo Peso";
+        } else if (imc >= 21.9 && imc < 27.0) {
+          guardar_cookie("seu IMC é " + imc + " | Adequado");
+          return "seu IMC é " + imc + " | Adequado";
+        } else if (imc >= 27.0 && imc < 32.0) {
+          guardar_cookie("seu IMC é " + imc + " | Sobrepeso");
+          return "seu IMC é " + imc + "| Sobrepeso";
+        } else if (imc >= 32.0 && imc < 37.0) {
+          guardar_cookie("seu IMC é " + imc + " | Obessidade 1");
+          return "seu IMC é " + imc + " | Obesidade Classe 1";
+        } else if (imc >= 37.0 && imc < 42.0) {
+          guardar_cookie("seu IMC é " + imc + " | Obessidade 2");
+          return "seu IMC é " + imc + " | Obesidade Classe 2";
+        } else {
+          guardar_cookie("seu IMC é " + imc + " | Obessidade 3");
+          return "seu IMC é " + imc + " | Obesidade Classe 3";
+        }
+      }
+    }
+    //Função para RCE
+    function calcularRCE(altura, genero) {
+      var cint = document.getElementById("cintura").value; //tem que estar em centimetros
+      var alt = altura * 100;
+
+      var RCE = cint / alt;
+
+      if (genero) {
+        if (RCE > 0.52) {
+          alert("Seu RCE é " + RCE + ", logo você está acima da nota de corte");
+          return "Seu RCE é " + RCE + ", logo você está acima da nota de corte";
+        }
+        else {
+          alert("Seu RCE é " + RCE + ", logo você está abaixo da nota de corte");
+          return "Seu RCE é " + RCE + ", logo você está abaixo da nota de corte";
+        }
+      }
+      else {
+        if (RCE > 0.53) {
+          alert("Seu RCE é " + RCE + ", logo você está acima da nota de corte");
+          return "Seu RCE é " + RCE + ", logo você está acima da nota de corte";
+        }
+        else {
+          alert("Seu RCE é " + RCE + ", logo você está abaixo da nota de corte");
+          return "Seu RCE é " + RCE + ", logo você está abaixo da nota de corte";
+        }
+      }
+    }
+
+    // Função para classificar o IMC em categorias
+    function classificarIMC(imc) {
+      if (imc < 18.5) {
+        guardar_cookie("seu IMC é " + imc + " | Baixo Peso");
+        return "seu IMC é " + imc + " | Baixo Peso";
+      } else if (imc >= 18.5 && imc < 25.0) {
+        guardar_cookie("seu IMC é " + imc + " | Adequado");
+        return "seu IMC é " + imc + " | Adequado";
+      } else if (imc >= 25.0 && imc < 30.0) {
+        guardar_cookie("seu IMC é " + imc + " | Sobrepeso");
+        return "seu IMC é " + imc + "| Sobrepeso";
+      } else if (imc >= 30.0 && imc < 35.0) {
+        guardar_cookie("seu IMC é " + imc + " | Obessidade 1");
+        return "seu IMC é " + imc + " | Obesidade Classe 1";
+      } else if (imc >= 35.0 && imc < 40.0) {
+        guardar_cookie("seu IMC é " + imc + " | Obessidade 2");
+        return "seu IMC é " + imc + " | Obesidade Classe 2";
+      } else {
+        guardar_cookie("seu IMC é " + imc + " | Obessidade 3");
+        return "seu IMC é " + imc + " | Obesidade Classe 3";
+      }
+    }
+
+    function RCQ(idade, genero) {
+
+      var menino_baixo = [0.83, 0.84, 0.88, 0.90, 0.91];
+      var menino_moderado = [0.88, 0.91, 0.95, 0.96, 0.98];
+      var menino_alto = [0.94, 0.96, 1, 1.02, 1.03];
+
+      var menina_baixo = [0.71, 0.72, 0.73, 0.74, 0.76];
+      var menina_moderado = [0.77, 0.78, 0.79, 0.81, 0.83];
+      var menina_alto = [0.82, 0.84, 0.87, 0.88, 0.90];
+
+      var cint = document.getElementById("cintura").value
+      var quad = document.getElementById("quadril").value
+
+      var RCQ = cint / quad;
+
+      if (genero) {
+        if (idade < 29) {
+          acabar_menino(0);
+        }
+        else if (idade >= 29 && idade < 39) {
+          acabar_menino(1);
+        }
+        else if (idade >= 39 && idade < 49) {
+          acabar_menino(2);
+        }
+        else if (idade >= 49 && idade < 59) {
+          acabar_menino(3);
+        }
+        else if (idade >= 59 && idade < 69) {
+          acabar_menino(4);
+        }
+      }
+      else {
+        if (idade < 29) {
+          acabar_menina(0);
+        }
+        else if (idade >= 29 && idade < 39) {
+          acabar_menina(1);
+        }
+        else if (idade >= 39 && idade < 49) {
+          acabar_menina(2);
+        }
+        else if (idade >= 49 && idade < 59) {
+          acabar_menina(3);
+        }
+        else if (idade >= 59 && idade < 69) {
+          acabar_menina(4);
+        }
+      }
+
+      function acabar_menino(indice) {
+        if (RCQ < menino_baixo[indice]) {
+          alert("RCQ: "+RCQ+"; classificado como baixo");
+          return "RCQ: "+RCQ+"; classificado como baixo";
+        }
+        else if (RCQ <= menino_moderado[indice]) {
+          alert("RCQ: "+RCQ+"; classificado como moderado");
+          return "RCQ: "+RCQ+"; classificado como moderado";
+        }
+        else if (RCQ <= menino_alto[indice]){
+          alert("RCQ: "+RCQ+"; classificado como alto");
+          return "RCQ: "+RCQ+"; classificado como alto";
+        }
+        if (RCQ > menino_alto[indice]){
+          alert("RCQ: "+RCQ+"; classificado como muito");
+          return "RCQ: "+RCQ+"; classificado como muito";
+        }
+      }
+
+      function acabar_menina(indice) {
+        if (RCQ < menina_baixo[indice]) {
+          alert("RCQ: "+RCQ+"; classificado como baixo");
+          return "RCQ: "+RCQ+"; classificado como baixo";
+        }
+        else if (RCQ <= menina_moderado[indice]) {
+          alert("RCQ: "+RCQ+"; classificado como moderado");
+          return "RCQ: "+RCQ+"; classificado como moderado";
+        }
+        else if (RCQ <= menina_alto[indice]){
+          alert("RCQ: "+RCQ+"; classificado como alto");
+          return "RCQ: "+RCQ+"; classificado como alto";
+        }
+        else if (RCQ > menina_alto[indice]){
+          alert("RCQ: "+RCQ+"; classificado como muito");
+          return "RCQ: "+RCQ+"; classificado como muito";
+        }
+      }
+
+    }
+  </script>
+
+</head>
+
+<body>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">BodyHealthy</li>
+      <li class="breadcrumb-item"><a href="BodyHealthy.html">Inicio</a></li>
+      <li class="breadcrumb-item"><a href="anamnese.html">Anamnese</a></li>
+      <li class="breadcrumb-item"><a href="antropometria.html">Antropometria</a></li>
+
+    </ol>
+  </nav>
+  <div class="jumbotron">
+    <div class="form-group col-md-6">
+      <label for="inputAddress">Altura</label>
+      <input type="text" class="form-control" id="altura">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputAddress">Peso</label>
+      <input type="text" class="form-control" id="peso">
+
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputAddress">idade</label>
+      <input type="text" class="form-control" id="idade">
+    </div>
+    <div class="row">
+      <legend class="col-form-label col-sm-6 pt-0">Clique aqui se for do gênero Masculino
+      </legend>
+      <div class="form-check">
+        <input class="form-check-input" name="gênero" type="checkbox" value="n" id="genero_menino" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+
+        </label>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputAddress">Coloque a circuferencia da cintura (cm)</label>
+        <input type="text" class="form-control" id="cintura">
+      </div>
+
+      <br>
+
+      <div class="form-group col-md-6">
+        <label for="inputAddress">Coloque a circuferencia do quadril (cm)</label>
+        <input type="text" class="form-control" id="quadril">
+      </div>
+
+
+
+    </div>
+    <button type="button" class="btn btn-dark" onclick="calcularIMC()">Calcular</button>
+
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

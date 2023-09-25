@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+  <html lang="pt-br">
+
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>BodyHealthy</title>
+  </head>
+
+  <body>
+
+    </nav>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">BodyHealthy</li>
+        <li class="breadcrumb-item"><a href="BodyHealthy.html">Inicio</a></li>
+        <li class="breadcrumb-item"><a href="anamnese.html">Anamnese</a></li>
+
+      </ol>
+    </nav>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Dados gerais do paciente</h1>
+      </div>
+      <div class="jumbotron">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+
+            </div>
+
+            <div class="form-group col-md-12">
+              <label for="inputAddress">Nome Completo</label>
+              <input type="text" class="form-control" id="nome" id="inputAddress">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="inputAddress">Idade</label>
+              <input type="number" class="form-control" id="idade" id="inputAddress">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="inputAddress">Sexo</label>
+              <select class="custom-select my-0 mr-sm-2" id="sexo" id="inputFormCustomSelectPref">
+                <option selected>Escolher</option>
+                <option value="feminino">Feminino</option>
+                <option value="masculino">Masculino</option>
+                <option value="não binario">Nâo Binario</option>
+                <option value="fluido">Genero fluido</option>
+              </select>
+            </div>
+
+
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Data de nascimento</label>
+              <input type="date" class="form-control" id="nascimento" id="inputDate">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Etnia</label>
+              <input type="text" class="form-control" id="etnia" id="inputEtnia">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="inputAddress">Estado Civil</label>
+              <select class="custom-select my-0 mr-sm-2" id="estadoCivil" id="inputFormCustomSelectPref">
+                <option selected>Escolher</option>
+                <option value="casado">Casado(a)</option>
+                <option value="solteiro">Solteiro(a)</option>
+                <option value="namorando">Namorando</option>
+                <option value="viuvo">Viúvo(a)</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="inputAddress">Filhos</label>
+              <input type="number" class="form-control" id="filhos" id="inputAddress">
+            </div>
+
+
+            <div class="form-group col-md-6">
+              <label for="inputAddress">Profissão</label>
+              <input type="text" class="form-control" id="profissao" id="inputProfissão">
+            </div>
+
+            <div class="form-group col-md-8">
+              <label for="inputAddress">Email</label>
+              <input type="email" class="form-control" id="email" id="inputEmail4">
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="inputAddress">Telefone</label>
+              <input type="tel" class="form-control" id="telefone" id="inputTel">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="inputAddress">Endereço</label>
+              <input type="tel" class="form-control" id="endereco" id="inputTel">
+            </div>
+
+
+            <!--Colocar telefone Aqui-->
+
+            <div class="form-group col-md-3">
+              <label for="inputAddress">Telefone</label>
+              <input type="tel" class="form-control" id="telefone2" id="inputTel">
+            </div>
+
+          </div>
+
+      </div>
+
+
+
+
+
+
+
+
+      <div class="jumbotron">
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Costuma permanecer muito tempo sentada ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="snSentada" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="snSentada" id="defaultCheck1">
+              <label class="form-check-label" id for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Antecedentes cirúrgicos ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="aCirurgicos" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="aCirurgicos" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Trat. estético anterior ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="tEstetico" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="tEstetico" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Antecedentes alérgicos ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="aAlergicos" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="aAlergicos" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Funcionamento intestinal regular ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="fIntestinal" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="fIntestinal" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">É Fumante ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="fumante" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="fumante" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Alimentação balanceada ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="alimentacaoBalanceada" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="alimentacaoBalanceada" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Pratica atividade física ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="praticaAF" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="praticaAF" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Ingere líquidos com frequência ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="ingereL" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="ingereL" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">É gestante ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="gestante" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="gestante" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Tem algum problema ortopédico ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="pOrtopedico" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="pOrtopedico" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Faz algum tratamento médico ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="tMedico" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="tMedico" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Usa ou já usou ácidos na pele?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="acidos_pele" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="acidos_pele" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Já fez algum tratamento ortomelecular ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="tOrtomolecular" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="tOrtomolecular" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">È portador de marcapasso ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="marcapasso" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="marcapasso" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Presença de metais ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="metais" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="metais" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Antecedentes oncológicos ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="oncologicos" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="oncologicos" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Ciclo menstrual regular ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="menstrual" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="menstrual" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Usa método anticoncepcional ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="anticoncepsional" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="anticoncepsional" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Varizes ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="varizes" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="varizes" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Lesões ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="lesoes" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="lesoes" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Hipertensão ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="hipertensao" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="hipertensao" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-6 pt-0">Epilepsia ?
+            </legend>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="s" id="epilepsia" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Sim
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="n" id="epilepsia" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Nâo
+              </label>
+            </div>
+        </fieldset>
+
+
+        <div class="card-body"></div>
+
+        <button id="guardar" onclick="anamneseCookie()">Guardar</button>
+
+
+        <h5 class="card-title">Próxima</h5>
+        <a href="antropometria.html" class="btn btn-primary">Antropometria</a>
+        <a href="Testes Físicos.html" class="btn btn-primary">Testes Físicos</a>
+      </div>
+
+
+      </form>
+    </div>
+    </div>
+
+    </div> <!-- container -->
+
+
+
+
+    <script src="cookies/anamnese.js"></script>
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+  </body>
